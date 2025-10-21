@@ -121,10 +121,12 @@ app.whenReady().then(async () => {
   });
   
   const promptPath = app.isPackaged
-    ? path.join(process.resourcesPath, 'app.asar/dist/helper/promptSlide.txt')
-    : path.join(__dirname, 'public/helper/promptSlide.txt');
+    ? path.join(process.resourcesPath, 'app.asar/dist/helper/promptSlide2.txt')
+    : path.join(__dirname, 'public/helper/promptSlide2.txt');
   let prompt = await fs.readFile(promptPath, "utf-8");
-  prompt = prompt.replace("**${language}**", language);
+  prompt = prompt.replace("${language}", language);
+
+  console.log(prompt);
 
   const contextSizes = [8192, 4096, 2048];
   for (const size of contextSizes) {
@@ -154,7 +156,7 @@ app.whenReady().then(async () => {
 
   const assistantMessage = await modelSessionChat.prompt(outline);
 
-  const response = await modelSessionSlide.prompt("文件內容: " + assistantMessage, { 
+  const response = await modelSessionSlide.prompt(prompt + "\n大綱內容: " + assistantMessage, { 
     maxTokens: contextSlide.contextSize
   });
 

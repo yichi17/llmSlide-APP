@@ -26,5 +26,4 @@
 {{"type": "end"}}
 
 請根據以下資訊產生 PPT 內容：
-語言：{language}
-大綱內容：{content}
+語言：${language}
