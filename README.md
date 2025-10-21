@@ -30,10 +30,16 @@ git clone https://github.com/llmSlide/llmSlide-APP.git
  npm install
  ```
 
- 3. 啟動開發模式：
+ 3. 啟動開發模式(MacOS)：
 
  ```
  npm run electron-start
+ ```
+
+ 3. 啟動開發模式(Windows)：
+
+ ```
+ npm run electron-start-windows
  ```
 
  ## 建置與打包
@@ -48,8 +54,14 @@ git clone https://github.com/llmSlide/llmSlide-APP.git
 
  某些相關功能依賴外部 helper 程式，請將它們下載並放到專案的 `public/helper/<platform>`：
 
+ - MacOS： [llmSlide-Helper-MacOS](https://github.com/llmSlide/llmSlide-Helper-MacOS)
  - Windows： [llmSlide-Helper-Windows](https://github.com/llmSlide/llmSlide-Helper-Windows)
- - macOS： [llmSlide-Helper-MacOS](https://github.com/llmSlide/llmSlide-Helper-MacOS)
+
+ MacOS：
+
+ ```
+ public/helper/macos/<helper-files>
+ ```
 
  Windows：
 
@@ -57,15 +69,9 @@ git clone https://github.com/llmSlide/llmSlide-APP.git
  public/helper/windows/<helper-files>
  ```
 
- macOS：
-
- ```
- public/helper/macos/<helper-files>
- ```
-
  注意事項：
 
- - macOS ：下載後可能需要執行 `chmod +x <file>` 以授予執行權限。
+ - MacOS ：下載後可能需要執行 `chmod +x <file>` 以授予執行權限。
  - Windows：若出現阻擋或權限問題，請確認檔案未被 Windows Defender 或其他安全軟體隔離。
 
  ## 開發與貢獻
