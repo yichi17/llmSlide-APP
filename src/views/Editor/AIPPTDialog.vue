@@ -35,8 +35,8 @@
          <OutlineEditor v-model:value="outline" />
        </div>
       <div class="btns" v-if="!outlineCreating">
-        <Button class="btn" type="primary" @click="step = 'template'">選擇模板</Button>
         <Button class="btn" @click="outline = ''; step = 'setup'">重新選擇檔案</Button>
+        <Button class="btn" type="primary" @click="step = 'template'">選擇模板</Button>
       </div>
     </div>
 
@@ -53,11 +53,11 @@
         </div>
       </div>
       <div class="btns">
+        <Button class="btn" @click="step = 'outline'">上一步</Button>
         <Button class="btn" type="primary" @click="createPPT()">
           <IconSend class="icon" />
           生成
         </Button>
-        <Button class="btn" @click="step = 'outline'">上一步</Button>
       </div>
     </div>
 
@@ -335,4 +335,5 @@ const createPPT = async () => {
   display: block;
   text-align: center;
 }
+
 </style>
